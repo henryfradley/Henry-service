@@ -6,8 +6,9 @@ let Description = function(props) {
 
   return (
     <div className="header">
-       <h1>current campsite name</h1>
-       <h3>Nearby: Crawford state Park, Panonia State Park</h3>
+        <p>United States > {props.state} > {props.title}</p>
+       <h1>{props.title}</h1>
+       <h3>Nearby: {props.nearby}</h3>
        <span>Recommend</span>
        <button>Upload</button>
        <button>Save to list</button>

@@ -1,31 +1,3 @@
-div .listing {
-  position: absolute;
-  top: 60%;
-  left: 30%;
-  right: 30%;
-  width: 20%;
-
-}
-/*
-div .covid {
-
-
-} */
-
-
-div .header {
-  position: absolute;
-  top: 35%;
-  left: 30%;
-  right: 30%
-
-}
-
-h1 {
-  font-family: Helvetica;
-  font-size: 32px;
-}
-
-h3 {
-  font-size: 14px;
+.modals {
+  display: inline;
 }

@@ -10,7 +10,7 @@
     "build": "webpack --config webpack.config.js",
     "start": "nodemon ./server/server.js",
     "watch": "webpack --watch",
-    "seed": "node faker.js"
+    "seed": "node seeder.js"
   },
   "dependencies": {
     "axios": "^0.21.0",
