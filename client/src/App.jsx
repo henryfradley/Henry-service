@@ -30,7 +30,7 @@ class App extends React.Component {
   componentDidMount() {
     axios({
       method: 'GET',
-      url: 'api/campsites'
+      url: 'api/campsites/1'
     })
     .then(response => {
       let site = response.data[0];

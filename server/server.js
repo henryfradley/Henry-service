@@ -10,11 +10,12 @@ const database = require('./database/db.js');
 app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
-app.get('/api/campsites', (req, res) => {
-  let queryStr = 'SELECT * FROM campsites';
+//
+app.get('/api/campsites/:propertyId', (req, res) => {
+  console.log(req.params);
+  let id = req.params.propertyId;
+  let queryStr = `SELECT * FROM campsites WHERE propertyId = ${id}`;
   database.query(queryStr, function(err, results) {
-    console.log(results);
     res.send(results);
   });
 });

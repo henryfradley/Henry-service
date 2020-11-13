@@ -24,15 +24,15 @@ class CampsiteArea extends React.Component {
     };
   }
 
-  this.details = this.props.details.parseJSON()
+  // this.details = this.props.details.parseJSON()
 
-  componentDidMount(props) {
-    this.setState({
-      tent: this.props.tent
-    })
-    console.log('campsite', this.state)
-    console.log('campsiteArea', this.props.details)
-  }
+  // componentDidMount(props) {
+  //   this.setState({
+  //     tent: this.props.
+  //   })
+  //   console.log('campsite', this.state)
+  //   console.log('campsiteArea', this.props.details)
+  // }
 
   render() {
     return (
