@@ -10,7 +10,9 @@
     "build": "webpack --config webpack.config.js",
     "start": "nodemon ./server/server.js",
     "watch": "webpack --watch",
-    "seed": "node seeder.js"
+    "seed": "node seeder.js",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "axios": "^0.21.0",
@@ -28,8 +30,12 @@
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.1",
+    "enzyme": "^3.11.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.6",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0"

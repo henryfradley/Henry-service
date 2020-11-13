@@ -24,6 +24,7 @@ class App extends React.Component {
       activities: '',
       terrain: ''
     };
+
   }
 
   componentDidMount() {
@@ -65,8 +66,8 @@ class App extends React.Component {
         <Listing title={this.state.hostedBy} description={this.state.fullDescription}/>
         <div className="modals">
           <CampsiteArea details={this.state.campSiteArea} />
-          <Essentials />
-          <Amenities />
+          <Essentials essentials={this.state.essentials} />
+          <Amenities amenities={this.state.amenities}/>
           <Details title={this.state.hostedBy} />
         </div>
 
