@@ -1,3 +1,16 @@
 .modals {
   display: inline;
 }
+
+
+.campsiteArea {
+  border: 1px solid black;
+}
+
+.essentials {
+  border: 1px solid black;
+}
+
+.amenities {
+  border: 1px solid black;
+}

@@ -16,10 +16,10 @@ app.get('/api/campsites/:propertyId', (req, res) => {
   let id = req.params.propertyId;
   let queryStr = `SELECT * FROM campsites WHERE propertyId = ${id}`;
   database.query(queryStr, function(err, results) {
+    console.log('results', results);
     res.send(results);
   });
 });
-
 
 
 
