@@ -83,9 +83,15 @@ let Modals = (props) => {
       <div>Up to {site.guests} guests per site</div>
       <div>{site.parking}</div>
       <div>{site.ada}</div>
-      <button onClick={props.handleOpenModal}>More details</button>
+      <button id="area" onClick={props.handleOpenModal}>More details</button>
       <ReactModal isOpen={props.showModal}>
-        <button onClick={props.handleCloseModal}>Close Modal</button>
+      <div>Campsite Area </div>
+      <div>{site.tent}</div>
+      <div>{site.sites} sites</div>
+      <div>Up to {site.guests} guests per site</div>
+      <div>{site.parking}</div>
+      <div>{site.ada}</div>
+        <button onClick={props.handleCloseModal}>Close</button>
       </ReactModal>
       </div>
       <div className="essentials">
@@ -94,9 +100,9 @@ let Modals = (props) => {
         <div>{essentials.pets}</div>
         <div>{essentials.campfire}</div>
         <button onClick={props.handleOpenModal}>More details</button>
-      <ReactModal isOpen={props.showModal}>
+      {/* <ReactModal isOpen={props.showModal}>
         <button onClick={props.handleCloseModal}>Close Modal</button>
-      </ReactModal>
+      </ReactModal> */}
       </div>
       <div className="amenities">
         <div>Amenities</div>
@@ -108,9 +114,9 @@ let Modals = (props) => {
         <div>{amenities.picnicTable}</div>
         <div>{amenities.laundry}</div>
         <button onClick={props.handleOpenModal}>More details</button>
-      <ReactModal isOpen={props.showModal}>
+      {/* <ReactModal isOpen={props.showModal}>
         <button onClick={props.handleCloseModal}>Close Modal</button>
-      </ReactModal>
+      </ReactModal> */}
       </div>
       </div>
     )

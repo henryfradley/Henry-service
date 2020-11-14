@@ -4,6 +4,8 @@ import Description from '../components/Description.jsx';
 import Listing from '../components/Listing.jsx';
 import Modals from '../components/Modals.jsx'
 import Details from '../components/Details.jsx';
+import Activities from '../components/Activities.jsx';
+import Terrain from '../components/Terrain.jsx';
 import ReactModal from 'react-modal';
 const axios = require('axios');
 
@@ -105,7 +107,10 @@ class App extends React.Component {
       <div>
         <Description title={this.state.hostedBy} nearby={this.state.nearby} state={this.state.state} />
         <Listing title={this.state.hostedBy} description={this.state.fullDescription}/>
-        <Modals showModal={this.state.showModal} handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} amenities={this.state.amenities} essentials={this.state.essentials} area={this.state.campSiteArea}/>
+        <Modals showModal={this.state.showModal} handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} amenities={this.state.amenities} essentials={this.state.essentials} area={this.state.campSiteArea} />
+        <Details title={this.state.hostedBy} />
+        <Activities activities={this.state.activities} />
+        <Terrain title={this.state.hostedBy} state={this.state.state} />
       </div>
 //
     )
