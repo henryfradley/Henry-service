@@ -26,4 +26,5 @@ app.get('/api/campsites/:propertyId', (req, res) => {
 app.listen(port, () => {
   console.log(`server listening at http://localhost:${port}`);
 });
-
+//added for jest?
+// module.exports = app;

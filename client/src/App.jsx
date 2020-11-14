@@ -24,7 +24,8 @@ class App extends React.Component {
       amenities: {},
       activities: {},
       terrain: '',
-      showModal: false
+      showModal: false,
+      selectedDiv: null
     };
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -32,8 +33,16 @@ class App extends React.Component {
 
   }
 
-  handleOpenModal() {
-    this.setState({showModal: true});
+  renderModal() {
+
+  }
+  //need to make so it knows which div info to pop up
+  handleOpenModal(e) {
+    this.setState({
+      showModal: true,
+      selectedDiv: e
+    });
+
   };
   handleCloseModal() {
     this.setState({showModal: false});
@@ -49,6 +58,7 @@ class App extends React.Component {
       let site = response.data[0];
       console.log('site', site);
       let campSiteArea = {
+        title: 'Campsite area',
         tent: site.tent,
         sites: site.sites,
         guests: site.guests,
@@ -56,6 +66,7 @@ class App extends React.Component {
         ada: site.ada
       };
       let amenities = {
+        title: 'Amenities',
         water: site.water,
         kitchen: site.kitchen,
         wifi: site.wifi,
@@ -65,11 +76,13 @@ class App extends React.Component {
         laundry: site.laundry
       };
       let essentials = {
+        title: 'Essentials',
         toilet: site.toilet,
         pets: site.pets,
         campfire: site.campfire
       };
       let activities = {
+        title: 'Activities',
         biking: site.biking,
         fishing: site.fishing,
         hiking: site.hiking,
