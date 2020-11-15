@@ -1,34 +1,92 @@
 .location {
-  font-size: 18px;
+  font-size: 15px;
 }
 .title {
-  font-size: 42px;
+  font-size: 36px;
   margin: 10px 0px;
-  font-family: Helvetica;
-  font-weight: normal;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
 }
 .nearby {
   font-size: 18px;
   font-weight: bold;
-
+  font-family: 'Poppins', sans-serif;
 }
 .nearbyDiv {
   font-size: 18px;
   font-weight: normal;
+  font-family: 'Poppins', sans-serif;
 }
 .header {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  border-bottom: 1px solid gray;
+}
+div .bar {
+  align-items: inline;
+  font-family: 'Poppins', sans-serif;
+  justify-content: space-between;
+}
+
+
+.upload {
+  padding: 6px 12px;
+  width: 92px;
+  font-weight: bold;
+  border-radius: 0px;
+}
+.save {
+  margin: 0px 10px 0px 0px;
+  padding: 6px 7px 6px 10px;
+  font-weight: bold;
+  width: 92px;
+  border-radius: 0px;
+}
+.up {
+  padding: 6px 12px;
+  border-radius: 0px;
+}
+
+.listing {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  align-content: flex-end;
+}
+
+
+
+.covid {
+  color: #972985;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F3E4EF;
+  border-radius: 6px;
+  width: 80%;
+  justify-content: flex-end;
+}
+
+
+
+a {
+  color: #972985;
+}
+
+
+
+
+.modals {
   display: flex;
   flex-direction: column;
   width: 30%;
 }
 
 
-.modals {
-  display: inline;
-}
 
 
-.campsiteArea {
+div .campsiteArea {
   border: 1px solid black;
 }
 
@@ -39,3 +97,4 @@
 .amenities {
   border: 1px solid black;
 }
+
