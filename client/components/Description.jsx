@@ -6,13 +6,13 @@ let Description = function(props) {
 
   return (
     <div className="header">
-        <p>United States > {props.state} > {props.title}</p>
-       <h1>{props.title}</h1>
-       <h3>Nearby: {props.nearby}</h3>
+        <p className="location">United States > {props.state} > {props.title} ></p>
+       <h1 className="title">{props.title}</h1>
+       <h4 className="nearbyDiv"><span className="nearby">Nearby: </span>{props.nearby}</h4>
        <span>Recommend</span>
-       <button>Upload</button>
-       <button>Save to list</button>
-       <button>up</button>
+       <button className="upload">Upload</button>
+       <button className="upload">Save to list</button>
+       <button className="upload">up</button>
     </div>
 
   )
