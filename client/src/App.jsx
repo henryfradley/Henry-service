@@ -38,7 +38,7 @@ class App extends React.Component {
     };
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
-    // this.toggleModal = this.toggleModal.bind(this);
+
   }
 
 
@@ -118,7 +118,8 @@ class App extends React.Component {
         essentials: essentials,
         essentialInfo: essentialInfo,
         activities: activities,
-        terrain: site.terrain
+        terrain: site.terrain,
+        terrainDetails: site.terrainDetails
       })
     })
     .catch(function(err) {
@@ -140,7 +141,7 @@ class App extends React.Component {
         <CardList showModal={this.state.showModal} handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} cards={this.state.cards} currentModal={this.state.currentModal} />
         <Details title={this.state.hostedBy} />
         <Activities activities={this.state.activities} />
-        <Terrain title={this.state.hostedBy} state={this.state.state} terrain ={this.state.terrain} />
+        <Terrain title={this.state.hostedBy} state={this.state.state} terrain ={this.state.terrain} terrainDetails={this.state.terrainDetails}/>
       </div>
 
     )

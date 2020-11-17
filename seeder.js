@@ -2,7 +2,7 @@ const faker = require('faker');
 
 const database = require('./server/database/db.js');
 
-let createTable = 'CREATE TABLE IF NOT EXISTS campsites(propertyId INT NOT NULL AUTO_INCREMENT, hostedBy VARCHAR(100), state VARCHAR(100), city VARCHAR(100), nearby VARCHAR(100),fullDescription VARCHAR(2000), tent VARCHAR(50), sites VARCHAR(50), guests VARCHAR(50), parking VARCHAR(50), ada VARCHAR(50), toilet VARCHAR(50), pets VARCHAR(50), campfire VARCHAR(50), water VARCHAR(50), kitchen VARCHAR(50), wifi VARCHAR(50), bins VARCHAR(50), showers VARCHAR(50), picnicTable VARCHAR(50), laundry VARCHAR(50), biking BOOLEAN, fishing BOOLEAN, hiking BOOLEAN, birdWatching BOOLEAN, swimming BOOLEAN, horsed BOOLEAN, surfing BOOLEAN, terrain VARCHAR(200), PRIMARY KEY (propertyId));';
+let createTable = 'CREATE TABLE IF NOT EXISTS campsites(propertyId INT NOT NULL AUTO_INCREMENT, hostedBy VARCHAR(100), state VARCHAR(100), city VARCHAR(100), nearby VARCHAR(100),fullDescription VARCHAR(2000), tent VARCHAR(50), sites VARCHAR(50), guests VARCHAR(50), parking VARCHAR(50), ada VARCHAR(50), toilet VARCHAR(50), pets VARCHAR(50), campfire VARCHAR(50), water VARCHAR(50), kitchen VARCHAR(50), wifi VARCHAR(50), bins VARCHAR(50), showers VARCHAR(50), picnicTable VARCHAR(50), laundry VARCHAR(50), biking BOOLEAN, fishing BOOLEAN, hiking BOOLEAN, birdWatching BOOLEAN, swimming BOOLEAN, horsed BOOLEAN, surfing BOOLEAN, terrain VARCHAR(200), terrainDetails VARCHAR(300), PRIMARY KEY (propertyId));';
 
 database.query(createTable);
 
@@ -54,8 +54,9 @@ for (var i = 0; i < 100; i++) {
   let surfing = faker.random.boolean();
   let terrainTypes = ['Farm', 'Beach', 'Forest', 'Moutain', 'Coastal', 'Desert', 'Hot spring', 'Lake', 'Waterfall', 'Ranch'];
   let terrain = terrainTypes[faker.random.number({max: 9})];
+  let terrainDetails = faker.lorem.sentence();
 
-  let queryStr = `INSERT INTO campsites VALUES (propertyId, "${hostedBy}", "${state}", "${city}", "${nearby}", "${fullDescription}", "${tent}", "${sites}", "${guests}", "${parking}", "${ada}", "${toilet}", "${pets}", "${campfire}", "${water}", "${kitchen}", "${wifi}", "${bins}", "${showers}", "${picnicTable}", "${laundry}", ${biking}, ${fishing}, ${hiking}, ${birdWatching}, ${swimming}, ${horses}, ${surfing}, "${terrain}");`;
+  let queryStr = `INSERT INTO campsites VALUES (propertyId, "${hostedBy}", "${state}", "${city}", "${nearby}", "${fullDescription}", "${tent}", "${sites}", "${guests}", "${parking}", "${ada}", "${toilet}", "${pets}", "${campfire}", "${water}", "${kitchen}", "${wifi}", "${bins}", "${showers}", "${picnicTable}", "${laundry}", ${biking}, ${fishing}, ${hiking}, ${birdWatching}, ${swimming}, ${horses}, ${surfing}, "${terrain}", "${terrainDetails}");`;
 
   database.query(queryStr);
 }

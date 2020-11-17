@@ -250,11 +250,11 @@ div.card {
 }
 .ReactModal__Overlay {
   opacity: .5;
-  transition: opacity 2000ms ease-in-out;
+  /* transition: opacity 2000ms ease-in-out; */
   animation: all 4s ease;
 }
 .ReactModal__Overlay--after-open{
-    opacity: 1;
+    opacity: .4;
 }
 
 .ReactModal__Overlay--before-close{
@@ -267,7 +267,6 @@ div.card {
   left: 40%;
   right: 40%;
   /* height: 80%; */
-
   border: 1px solid #ccc;
   background: #fff;
   overflow: scroll;
@@ -322,6 +321,7 @@ button .modal {
 
 .detailHead {
   font-family: 'Calibre Regular';
+  font-size: 16px;
 
 }
 
@@ -329,5 +329,54 @@ button .modal {
   display: inline-block;
   font-family: 'Calibre Bold';
 }
+
+.activityHead {
+  font-family: 'Calibre Regular';
+  font-size: 16px;
+}
+
+.activityList {
+  display: flex;
+}
+.activity {
+  margin-top: 30px;
+  margin-right: 25px;
+  font-family: 'Calibre Regular';
+  text-align: center;
+  width: 75px;
+}
+.activityBlock {
+  padding-top: 20%;
+  width: 75px;
+  height: 75px;
+  border: 1px solid #D3D3D3;
+}
+
+.terrainHead {
+  font-family: 'Calibre Regular';
+  font-size: 16px;
+}
+
+.terrainFeatures {
+  color: gray;
+  font-family: 'Calibre Light';
+}
+
+.terrain {
+  width: 30%;
+  border-top: 1px solid #D3D3D3;
+  margin-top: 30px;
+}
+.terrainTitle {
+  font-family: 'Calibre Regular';
+}
+
+.terrainTypes {
+  margin-top: 30px;
+  width: 25%;
+  border: 1px solid #D3D3D3;
+  padding: 5% 5%;
+}
+
 
 
