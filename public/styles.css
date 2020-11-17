@@ -11,6 +11,20 @@
   src: url('calibre-test-regular.woff') format('woff');
 
 }
+@font-face {
+  font-family: 'Calibre Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url('calibre-test-bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Calibre Semi Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: url('calibre-test-semi-bold.woff') format('woff');
+
+}
+
 
 body {
   font-family: 'Calibre Light'
@@ -21,21 +35,45 @@ body {
 .location {
   font-size: 15px;
   font-family: 'Calibre Regular';
+  text-decoration: underline;
+  text-decoration-color: light grey;
+  display: flex;
+  margin: 0px;
+
 }
 .title {
   font-size: 36px;
   font-family: 'Calibre Regular', sans-serif;
-  font-weight: bold;
+  margin: 0px;
 }
 .nearby {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
+  font-family: 'Calibre Regular';
+  margin: 0px;
+}
+
+.nearbyDiv {
+  font-size: 16px;
   font-family: 'Calibre Light'
 }
-.nearbyDiv {
-  font-size: 18px;
-  font-weight: normal;
-  font-family: 'Poppins', sans-serif;
+
+div .recommend {
+  display: flex;
+  flex-wrap: nowrap;
+
+
+}
+.recommend {
+  font-size: 16px;
+  font-family: 'Calibre Regular';
+
+}
+
+.thumbsup{
+  font-family: 'Calibre Regular';
+  font-size: 16px;
+  color: #40D9AC;
 }
 .header {
   display: flex;
@@ -43,15 +81,24 @@ body {
   width: 30%;
   border-bottom: 1px solid gray;
 }
+
+.circle {
+  height: 30px;
+  width: 30px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
 div .bar {
   align-items: inline;
-  font-family: 'Poppins', sans-serif;
   justify-content: space-between;
   background-color: none;
 }
 
 .bar {
   display: flex;
+  margin-bottom: 5%;
 }
 
 
@@ -59,27 +106,35 @@ div .bar {
 
 
 .upload {
-  padding: 6px 12px;
+  padding: 6px 7px 0px 10px;
   width: 92px;
+  height: 35px;
   font-weight: bold;
   border-radius: 0px;
   border: .5px solid #D3D3D3;
   background: none;
+  display: flex;
+  font-family: 'Calibre regular';
+  font-size: 14px;
 }
 .save {
   margin: 0px 10px 0px 0px;
   padding: 6px 7px 6px 10px;
   font-weight: bold;
   width: 92px;
+  height: 35px;
   border-radius: 0px;
   border: .5px solid #D3D3D3;
   background: none;
   color: #E68585;
+  display: flex;
+  font-family: 'Calibre regular';
 
 }
 .up {
   padding: 6px 12px;
   border-radius: 0px;
+  height: 40px;
   border: .5px solid #D3D3D3;
   background: none;
 }
@@ -87,11 +142,27 @@ div .bar {
 .topListing {
   display: flex;
 
+
+}
+.profilePhoto {
+  height: 70px;
+  width: 70px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5%;
+
+}
+.listedBy {
+  margin-top: 2%;
+  display: flex;
+
 }
 
 .hostedBy {
   display: flex;
-  width: 10%;
+  width: 15%;
+
 }
 
 .listing {
@@ -109,22 +180,49 @@ div .bar {
   color: #972985;
   font-size: 14px;
   font-weight: bold;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Calibre Regular';
   background-color: #F3E4EF;
   border-radius: 6px;
   width: 80%;
   justify-content: flex-end;
+  padding: 5px;
 }
+div .covid {
+  padding: 5px;
+
+}
+a .covid {
+  padding: 0px;
+}
+
+.description {
+  font-family: 'Calibre Light';
+  justify-content: right;
+  /* width: 80%; */
+
+
+
+}
+
+div.cards {
+  width: 30%;
+}
+
+
+
+
 
 div.card {
   border: .5px solid #D3D3D3;
   height: 20%;
   padding: 3%;
-  width: 45%;
+  width: 35%;
   flex: 1;
   margin: 2%;
+  justify-content: center;
+  font-family: 'Calibre Light';
+  font-size: 18px;
 }
-
 
 
 .modals {
@@ -148,6 +246,7 @@ div.card {
   padding: 20px;
 }
 
+
 button {
   outline: none;
 }
@@ -166,6 +265,24 @@ button .modal {
   border: none;
   outline: none;
 
+}
+
+.sendAMessage {
+  color: #40D9AC;
+}
+
+.details {
+  border-top: .5px solid #D3D3D3;
+  border-bottom: .5px solid #D3D3D3;
+  font-family: 'Calibre Regular';
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.detailList {
+  display: inline-block;
+  font-family: 'Calibre Bold';
 }
 
 

@@ -15,10 +15,12 @@ let Activities = (props) => {
     }
   }
   const listItems = list.map((activity) =>
-  <Activity value={activity}/>
+  <div className="activity"><Activity value={activity}/></div>
   )
   return (
     <div>
+      <div>Activities</div>
+      <div>Offered on the Host's property or nearby</div>
       {listItems}
     </div>
   )

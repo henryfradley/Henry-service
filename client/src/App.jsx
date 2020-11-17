@@ -5,7 +5,10 @@ import Listing from '../components/Listing.jsx';
 import Details from '../components/Details.jsx';
 import Activities from '../components/Activities.jsx';
 import Terrain from '../components/Terrain.jsx';
-import CardList from '../components/CardList.jsx'
+import CardList from '../components/CardList.jsx';
+import Modal from '../components/Modal.jsx';
+import { FaDog } from "react-icons/fa";
+
 const axios = require('axios');
 
 
@@ -29,18 +32,17 @@ class App extends React.Component {
     };
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
-
-
+    // this.toggleModal = this.toggleModal.bind(this);
   }
 
-  renderModal(event) {
 
-  }
-  //need to make so it knows which div info to pop up
+  // //need to make so it knows which div info to pop up
   handleOpenModal(event) {
+    console.log('event.target', event.target.parents)
     this.setState({
       showModal: true,
-      currentModal: event.target.id
+      currentModal: event.target
+
     })
   };
 
@@ -94,17 +96,18 @@ class App extends React.Component {
 
 
   render () {
+    const { showModal } = this.state.showModal;
 
     return (
       <div>
         <Description title={this.state.hostedBy} nearby={this.state.nearby} state={this.state.state} />
         <Listing title={this.state.hostedBy} description={this.state.fullDescription}/>
-        <CardList showModal={this.state.showModal} handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} cards={this.state.cards} currentModal={this.currentModal} />
+        <CardList showModal={this.state.showModal} handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} cards={this.state.cards} currentModal={this.state.currentModal} />
         <Details title={this.state.hostedBy} />
         <Activities activities={this.state.activities} />
         <Terrain title={this.state.hostedBy} state={this.state.state} terrain ={this.state.terrain} />
       </div>
-//
+
     )
   }
 

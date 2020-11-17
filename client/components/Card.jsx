@@ -14,20 +14,20 @@ let CardInfo = (props) => {
 
 
 let Card = (props) => {
-  console.log(props);
   const card = props.card;
-  console.log('card', card)
 
     const infoCard = card.map((info) =>
       <CardInfo value={info} />
     )
 
   return (
-    <div className="card">
+    <div className="card" id={props.id}>
         {infoCard}
+        <br/>
+        <br/>
         <button className="moreDetails" onClick={props.handleOpenModal}>More details</button>
         <ReactModal className="modal" isOpen={props.showModal}>
-          <button onClick={props.handleCloseModal}>X</button>
+          <button id={props.id} onClick={props.handleCloseModal}>X</button>
           {infoCard}
         </ReactModal>
       </div>
