@@ -15,20 +15,22 @@ let CardInfo = (props) => {
 
 let Card = (props) => {
   const card = props.card;
+  console.log(props.id)
 
     const infoCard = card.map((info) =>
       <CardInfo value={info} />
     )
 
   return (
+
     <div className="card" id={props.id}>
         {infoCard}
         <br/>
         <br/>
-        <button className="moreDetails" onClick={props.handleOpenModal}>More details</button>
+        <button className="moreDetails" onClick={props.handleOpenModal} id={props.id}>More details</button>
         <ReactModal className="modal" isOpen={props.showModal}>
           <button id={props.id} onClick={props.handleCloseModal}>X</button>
-          {infoCard}
+          {props.currentModal}
         </ReactModal>
       </div>
     )
@@ -38,83 +40,3 @@ let Card = (props) => {
 
 export default Card;
 
-
-      // <div className="card">
-      //   {infoCard}
-      //   <button className="moreDetails" onClick={props.handleOpenModal}>More details</button>
-      //   <ReactModal className="modal" isOpen={props.showModal}>
-      //     <button onClick={props.handleCloseModal}>X</button>
-      //     {infoCard}
-      //   </ReactModal>
-      // </div>
-
-
-
-
-
-
-
-// let Cards = (props) => {
-//   let cards = props.cards;
-//   let campSiteArea = cards[0];
-//   let Amenities = cards[1];
-//   let Essentials = cards[2];
-//   console.log('csa', campSiteArea)
-//   let campSiteCard;
-//   if (campSiteArea) {
-//     campSiteCard = campSiteArea.map((info) =>
-//    <CardInfo value={info} />
-//   )
-//   }
-
-
-
-
-
-//   return (
-//     <div className="modals">
-//       <div className="card" id={cards.indexOf(card)}>
-//         {campSiteCard}
-//        <button className="moreDetails" onClick={props.handleOpenModal} id={cards.indexOf(card)}>More details</button>
-//         <ReactModal className="modal" isOpen={props.showModal}>
-//          <button onClick={props.handleCloseModal}>X</button>
-//           {infoCard}
-//         </ReactModal>
-//       </div>
-
-
-
-//     </div>
-//     )
-// }
-
-
-
-
-// let Card = (props) => {
-
-//   let cards = props.cards;
-//   let cardList = [];
-//   for (var card of cards) {
-//     const infoCard = card.map((info) =>
-//       <CardInfo value={info} />
-//     )
-//     cardList.push(
-//       <div className="card" id={cards.indexOf(card)}>
-//         {infoCard}
-//         <button className="moreDetails" onClick={props.handleOpenModal} id={cards.indexOf(card)}>More details</button>
-//         <ReactModal className="modal" isOpen={props.showModal}>
-//           <button onClick={props.handleCloseModal}>X</button>
-//           {infoCard}
-//         </ReactModal>
-//       </div>
-//     )
-//   }
-
-
-//   return (
-//     <div className="modals">
-//       {cardList}
-//     </div>
-//     )
-// }

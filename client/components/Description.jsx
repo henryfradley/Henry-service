@@ -31,8 +31,8 @@ let Description = function(props) {
            <span className="circle"></span>
          </div>
 
-       <button className="upload"><MdCameraAlt size="15px" />  Upload</button>
-       <button className="save">Save to list <MdKeyboardArrowDown /></button>
+       <button className="upload"><MdCameraAlt size="15px"/>  Upload</button>
+       <button className="save">Save to list <MdKeyboardArrowDown size="15px"/></button>
        <button className="up">
          <CgArrowUpR size="15px" />
        </button>
