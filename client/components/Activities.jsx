@@ -17,9 +17,6 @@ let Activities = (props) => {
   const listItems = list.map((activity) =>
   <Activity value={activity}/>
   )
-  console.log(activities);
-  console.log(list);
-
   return (
     <div>
       {listItems}

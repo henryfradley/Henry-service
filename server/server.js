@@ -12,11 +12,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 //
 app.get('/api/campsites/:propertyId', (req, res) => {
-  console.log(req.params);
   let id = req.params.propertyId;
   let queryStr = `SELECT * FROM campsites WHERE propertyId = ${id}`;
   database.query(queryStr, function(err, results) {
-    console.log('results', results);
     res.send(results);
   });
 });
