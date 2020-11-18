@@ -19,9 +19,9 @@ let Listing = function(props) {
       </div>
 
       <div>
-        <p className="description">The home of {props.title}</p>
+        <p className="description">The home of {props.title}.</p>
         <p className="description">
-        {props.description}
+          <ReadMore description={props.description}/>
         </p>
       </div>
     </div>
@@ -37,3 +37,4 @@ let Listing = function(props) {
 
 export default Listing;
 
+// {props.description}

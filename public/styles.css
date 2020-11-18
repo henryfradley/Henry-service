@@ -111,7 +111,7 @@ div .bar {
   height: 35px;
   font-weight: bold;
   border-radius: 0px;
-  border: .5px solid #D3D3D3;
+  border: .5px solid #E0E0E0;
   background: none;
   display: flex;
   font-family: 'Calibre regular';
@@ -124,7 +124,7 @@ div .bar {
   width: 92px;
   height: 35px;
   border-radius: 0px;
-  border: .5px solid #D3D3D3;
+  border: .5px solid #E0E0E0;
   background: none;
   color: #E68585;
   display: flex;
@@ -136,7 +136,7 @@ div .bar {
   padding: 6px 12px;
   border-radius: 0px;
   height: 40px;
-  border: .5px solid #D3D3D3;
+  border: .5px solid #E0E0E0;
   background: none;
 }
 
@@ -200,9 +200,14 @@ div .covid {
   font-family: 'Calibre Light';
   justify-content: right;
   /* width: 80%; */
+  margin-left: 35%;
 
 
 
+}
+
+.cardInfo {
+  display: flex;
 }
 
 div.cards {
@@ -210,13 +215,13 @@ div.cards {
   display: flex;
 }
 
-h1.card {
+h1.cardHead {
   font-family: 'Calibre Regular';
   font-size: 24px;
 }
 
 .detailBox {
-  border: .5px solid #D3D3D3;
+  border: .5px solid #E0E0E0;
   width: 80%;
   margin: 4% auto;
   padding: 4% 4%;
@@ -228,16 +233,25 @@ h1.card {
 
 
 
-div.card {
-  border: .5px solid #D3D3D3;
+.card {
+  /* border: .5px solid #E0E0E0; */
   padding: 3%;
-  width: 60%;
   flex: 1;
   margin: 2%;
   justify-content: center;
   font-family: 'Calibre Light';
   font-size: 18px;
+  box-shadow: 0 0 2px #D3D3D3;
+  position: relative;
 }
+
+.x {
+  outline: none;
+  padding: 0;
+  border: none;
+  background: none
+}
+
 
 
 .modals {
@@ -249,16 +263,20 @@ div.card {
   display: none;
 }
 .ReactModal__Overlay {
-  opacity: .5;
-  /* transition: opacity 2000ms ease-in-out; */
-  animation: all 4s ease;
-}
-.ReactModal__Overlay--after-open{
-    opacity: .4;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 500ms ease-in-out;
 }
 
-.ReactModal__Overlay--before-close{
-    opacity: 0;
+.ReactModal__Overlay--after-open {
+  opacity: .6;
+  transform: translateY(0px);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 500ms ease-out;
 }
 
 .modal {
@@ -267,12 +285,12 @@ div.card {
   left: 40%;
   right: 40%;
   /* height: 80%; */
-  border: 1px solid #ccc;
   background: #fff;
   overflow: scroll;
   border-radius: 4px;
   outline: none;
   padding: 20px;
+  box-shadow: 0 0 10px #D3D3D3;
 }
 
 
@@ -293,10 +311,10 @@ button .modal {
   background: none;
   border: none;
   outline: none;
-  position: absolute;
-  bottom: 0;
   font-style: 'Calibre Regular';
   font-size: 16px;
+  position: absolute;
+  bottom: 5px;
 
 }
 
@@ -305,8 +323,8 @@ button .modal {
 }
 
 .details {
-  border-top: .5px solid #D3D3D3;
-  border-bottom: .5px solid #D3D3D3;
+  border-top: .5px solid #E0E0E0;;
+  border-bottom: .5px solid #E0E0E0;
   font-family: 'Calibre Regular';
   padding-top: 20px;
   padding-bottom: 20px;
@@ -324,10 +342,13 @@ button .modal {
   font-size: 16px;
 
 }
+.column {
+  font-family: 'Calibre Light';
+}
 
 .detailList {
   display: inline-block;
-  font-family: 'Calibre Bold';
+  font-family: 'Calibre Regular';
 }
 
 .activityHead {

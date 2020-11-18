@@ -9,7 +9,23 @@ import CardList from '../components/CardList.jsx';
 import CampSiteAreaModal from '../components/CampSiteAreaModal.jsx';
 import AmenitiesModal from '../components/AmenitiesModal.jsx';
 import EssentialsModal from '../components/EssentialsModal.jsx';
+import { CgShapeTriangle } from "react-icons/cg";
+import { GoLocation} from "react-icons/go";
+import { GoPerson } from "react-icons/go";
+import { IconName } from "react-icons/bs"
+import { RiParkingLine } from "react-icons/ri";
+import { BiHandicap } from "react-icons/bi";
+import { GiWaterSplash } from "react-icons/gi";
+import { GiKnifeFork } from "react-icons/gi";
+import { BiWifi } from "react-icons/bi";
+import { FaShower } from "react-icons/fa";
+import { GiTrashCan } from "react-icons/gi";
+import { SiAirtable } from "react-icons/si";
+import { FaTshirt } from "react-icons/fa";
+import { FaToiletPaper } from "react-icons/fa";
 import { FaDog } from "react-icons/fa";
+import { GiCampfire } from "react-icons/gi";
+
 
 const axios = require('axios');
 
@@ -34,7 +50,7 @@ class App extends React.Component {
       terrain: '',
       showModal: false,
       modalList: [<CampSiteAreaModal />, <AmenitiesModal />, <EssentialsModal />],
-      currentModal: <div>this is where a modal should go </div>
+      currentModal: ''
     };
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -56,7 +72,7 @@ class App extends React.Component {
   handleCloseModal() {
     this.setState({
       showModal: false,
-      currentModal: <div></div>
+      currentModal: ''
     });
   }
 
@@ -90,9 +106,30 @@ class App extends React.Component {
         picnicTable: site.picnicTable,
         laundry: site.laundry
       };
-      let campSiteArea = [<h1 className="card">Campsite area</h1>, site.tent, site.sites, site.guests, site.parking, site.ada];
-      let amenities = [<h1 className="card">Amenities</h1>, site.water, site.kitchen, site.wifi, site.bins, site.showers, site.picnicTable, site.laundry];
-      let essentials = [<h1 className="card">Essentials</h1>, site.toilet, site.pets, site.campfire];
+      let campSiteArea = [
+        <h1 className="cardHead">Campsite area</h1>,
+        <div><CgShapeTriangle size="25px"/>{site.tent}</div>,
+        <div><GoLocation size="20px"/>{site.sites}</div>,
+        <div><GoPerson size="20px"/>{site.guests}</div>,
+        <div><RiParkingLine size="20px"/>{site.parking}</div>,
+        <div><BiHandicap size="20px"/>{site.ada}</div>
+      ];
+      let amenities = [
+        <h1 className="cardHead">Amenities</h1>,
+        <div className="cardInfo"><GiWaterSplash size="20px"/>{site.water}</div>,
+        <div><GiKnifeFork size="20px"/>{site.kitchen}</div>,
+        <div><BiWifi size="20px"/>{site.wifi}</div>,
+        <div><FaShower size="20px"/>{site.showers}</div>,
+        <div><GiTrashCan size="20px"/>{site.bins}</div>,
+        <div><SiAirtable size="20px"/>{site.picnicTable}</div>,
+        <div><FaTshirt size="20px"/>{site.laundry}</div>
+      ];
+      let essentials = [
+        <h1 className="cardHead">Essentials</h1>,
+        <div><FaToiletPaper size="20px"/>{site.toilet}</div>,
+        <div><FaDog size="20px"/>{site.pets}</div>,
+        <div><GiCampfire size="20px"/>{site.campfire}</div>
+      ];
       let activities = {
         title: 'Activities',
         biking: site.biking,
@@ -128,9 +165,6 @@ class App extends React.Component {
   }
 
 
-
-
-
   render () {
     const { showModal } = this.state.showModal;
 
@@ -151,6 +185,10 @@ class App extends React.Component {
 
 ReactDOM.render(<App />, document.getElementById('app'));
 
+
+// let campSiteArea = [<h1 className="card">Campsite area</h1>, site.tent, site.sites, site.guests, site.parking, site.ada];
+//       let amenities = [<h1 className="card">Amenities</h1>, site.water, site.kitchen, site.wifi, site.bins, site.showers, site.picnicTable, site.laundry];
+//       let essentials = [<h1 className="card">Essentials</h1>, site.toilet, site.pets, site.campfire];
 
 // componentDidMount() {
 //   axios({

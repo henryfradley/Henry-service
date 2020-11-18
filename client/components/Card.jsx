@@ -1,8 +1,9 @@
 
 import React from 'react';
 import ReactModal from 'react-modal';
-import { GiTriangleTarget } from "react-icons/gi";
+import { CgClose } from "react-icons/cg";
 import CardList from './CardList.jsx'
+
 
 
 
@@ -15,7 +16,6 @@ let CardInfo = (props) => {
 
 let Card = (props) => {
   const card = props.card;
-  console.log(props.id)
 
     const infoCard = card.map((info) =>
       <CardInfo value={info} />
@@ -28,8 +28,8 @@ let Card = (props) => {
         <br/>
         <br/>
         <button className="moreDetails" onClick={props.handleOpenModal} id={props.id}>More details</button>
-        <ReactModal className="modal" isOpen={props.showModal}>
-          <button id={props.id} onClick={props.handleCloseModal}>X</button>
+        <ReactModal className="modal" isOpen={props.showModal} closeTimeoutMS={500}>
+          <button className="x" onClick={props.handleCloseModal}><CgClose size="20px"/></button>
           {props.currentModal}
         </ReactModal>
       </div>

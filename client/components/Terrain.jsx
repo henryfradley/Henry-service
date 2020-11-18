@@ -27,7 +27,7 @@ let Terrain = (props) => {
   return (
     <div className="terrain">
       <h3 className="terrainHead">Terrain</h3>
-      <div>Natural features you'll find at {props.title} in {props.state}</div>
+      <div className="terrainFeatures">Natural features you'll find at {props.title} in {props.state}</div>
       <div className="terrainTypes">
         {terrainIcons[props.terrain]}
         <h3 className="terrainTitle">{props.terrain}</h3>
