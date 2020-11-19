@@ -10,7 +10,26 @@ import CardList from './CardList.jsx'
 
 
 let CardInfo = (props) => {
-  return <div className="cardInfo">{props.value}</div>
+  let info = props.value;
+  // let grayOut = ['unavailable', 'No']
+//   {if (info.contains('No')) {
+//     <div className="grayCardInfo">{info}</div>
+//   } else {
+//     return <div className="cardInfo">{info}</div>
+//   }
+// }
+ return <div className="cardInfo">{props.value}</div>
+
+// return {{props.value.includes}('unavailable' || 'No') ?
+//   <div className="grayCardInfo">{props.value}</div>
+//   : <div className="cardInfo">{props.value}</div>
+// }
+
+
+
+
+
+
 };
 
 

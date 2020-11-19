@@ -9,6 +9,7 @@ import CardList from '../components/CardList.jsx';
 import CampSiteAreaModal from '../components/CampSiteAreaModal.jsx';
 import AmenitiesModal from '../components/AmenitiesModal.jsx';
 import EssentialsModal from '../components/EssentialsModal.jsx';
+import Login from '../components/Login.jsx'
 import { CgShapeTriangle } from "react-icons/cg";
 import { GoLocation} from "react-icons/go";
 import { GoPerson } from "react-icons/go";
@@ -49,7 +50,7 @@ class App extends React.Component {
       activities: {},
       terrain: '',
       showModal: false,
-      modalList: [<CampSiteAreaModal />, <AmenitiesModal />, <EssentialsModal />],
+      // modalList: [<CampSiteAreaModal />, <AmenitiesModal />, <EssentialsModal />, <Login />],
       currentModal: ''
     };
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -60,8 +61,9 @@ class App extends React.Component {
 
   // //need to make so it knows which div info to pop up
   handleOpenModal(event) {
+    console.log('hello?');
     let cardId = event.target.getAttribute('id');
-    let modalList = [<CampSiteAreaModal info={this.state.csInfo} />, <AmenitiesModal info={this.state.amenitieInfo}/>, <EssentialsModal info={this.state.essentialInfo}/>]
+    let modalList = [<CampSiteAreaModal info={this.state.csInfo} />, <AmenitiesModal info={this.state.amenitieInfo}/>, <EssentialsModal info={this.state.essentialInfo}/>, <Login />]
     let popup = modalList[cardId];
     this.setState({
       showModal: true,
@@ -108,27 +110,27 @@ class App extends React.Component {
       };
       let campSiteArea = [
         <h1 className="cardHead">Campsite area</h1>,
-        <div><CgShapeTriangle size="25px"/>{site.tent}</div>,
-        <div><GoLocation size="20px"/>{site.sites}</div>,
-        <div><GoPerson size="20px"/>{site.guests}</div>,
-        <div><RiParkingLine size="20px"/>{site.parking}</div>,
-        <div><BiHandicap size="20px"/>{site.ada}</div>
+        <div className="iconText"><div className="icon"><CgShapeTriangle size="20px"/></div>{site.tent}</div>,
+        <div className="iconText"><div className="icon"><GoLocation size="20px"/></div>{site.sites}</div>,
+        <div className="iconText"><div className="icon"><GoPerson size="20px"/></div>{site.guests}</div>,
+        <div className="iconText"><div className="icon"><RiParkingLine size="20px"/></div>{site.parking}</div>,
+        <div className="iconText"><div className="icon"><BiHandicap size="20px"/></div>{site.ada}</div>
       ];
       let amenities = [
         <h1 className="cardHead">Amenities</h1>,
-        <div className="cardInfo"><GiWaterSplash size="20px"/>{site.water}</div>,
-        <div><GiKnifeFork size="20px"/>{site.kitchen}</div>,
-        <div><BiWifi size="20px"/>{site.wifi}</div>,
-        <div><FaShower size="20px"/>{site.showers}</div>,
-        <div><GiTrashCan size="20px"/>{site.bins}</div>,
-        <div><SiAirtable size="20px"/>{site.picnicTable}</div>,
-        <div><FaTshirt size="20px"/>{site.laundry}</div>
+        <div className="iconText"><div className="icon"><GiWaterSplash size="20px"/></div>{site.water}</div>,
+        <div className="iconText"><div className="icon"><GiKnifeFork size="20px"/></div>{site.kitchen}</div>,
+        <div className="iconText"><div className="icon"><BiWifi size="20px"/></div>{site.wifi}</div>,
+        <div className="iconText"><div className="icon"><FaShower size="20px"/></div>{site.showers}</div>,
+        <div className="iconText"><div className="icon"><GiTrashCan size="20px"/></div>{site.bins}</div>,
+        <div className="iconText"><div className="icon"><SiAirtable size="20px"/></div>{site.picnicTable}</div>,
+        <div className="iconText"><div className="icon"><FaTshirt size="20px"/></div>{site.laundry}</div>
       ];
       let essentials = [
         <h1 className="cardHead">Essentials</h1>,
-        <div><FaToiletPaper size="20px"/>{site.toilet}</div>,
-        <div><FaDog size="20px"/>{site.pets}</div>,
-        <div><GiCampfire size="20px"/>{site.campfire}</div>
+        <div className="iconText"><div className="icon"><FaToiletPaper size="20px"/></div>{site.toilet}</div>,
+        <div className="iconText"><div className="icon"><FaDog size="20px"/></div>{site.pets}</div>,
+        <div className="iconText"><div className="icon"><GiCampfire size="20px"/></div>{site.campfire}</div>
       ];
       let activities = {
         title: 'Activities',
@@ -170,8 +172,8 @@ class App extends React.Component {
 
     return (
       <div>
-        <Description title={this.state.hostedBy} nearby={this.state.nearby} state={this.state.state} />
-        <Listing title={this.state.hostedBy} description={this.state.fullDescription}/>
+        <Description handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} title={this.state.hostedBy} nearby={this.state.nearby} state={this.state.state}/>
+        <Listing title={this.state.hostedBy} description={this.state.fullDescription} photo={this.state.profileImage}/>
         <CardList showModal={this.state.showModal} handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} cards={this.state.cards} currentModal={this.state.currentModal} />
         <Details title={this.state.hostedBy} />
         <Activities activities={this.state.activities} />
@@ -185,49 +187,4 @@ class App extends React.Component {
 
 ReactDOM.render(<App />, document.getElementById('app'));
 
-
-// let campSiteArea = [<h1 className="card">Campsite area</h1>, site.tent, site.sites, site.guests, site.parking, site.ada];
-//       let amenities = [<h1 className="card">Amenities</h1>, site.water, site.kitchen, site.wifi, site.bins, site.showers, site.picnicTable, site.laundry];
-//       let essentials = [<h1 className="card">Essentials</h1>, site.toilet, site.pets, site.campfire];
-
-// componentDidMount() {
-//   axios({
-//     method: 'GET',
-//     url: 'api/campsites/1'
-//   })
-//   .then(response => {
-
-//     let site = response.data[0];
-//     let campSiteArea = ['Campsite area', site.tent, site.sites, site.guests, site.parking, site.ada]
-//     let amenities = ['Amenities', site.water, site.kitchen, site.wifi, site.bins, site.showers, site.picnicTable, site.laundry]
-//     let essentials = ['Essentials', site.toilet, site.pets, site.campfire]
-//     let activities = {
-//       title: 'Activities',
-//       biking: site.biking,
-//       fishing: site.fishing,
-//       hiking: site.hiking,
-//       birdWatching: site.birdWatching,
-//       swimming: site.swimming,
-//       horses: site.horses,
-//       surfing: site.surfing
-//     };
-
-//     this.setState({
-//       hostedBy: site.hostedBy,
-//       state: site.state,
-//       city: site.city,
-//       nearby: site.nearby,
-//       fullDescription: site.fullDescription,
-//       cards: [campSiteArea, amenities, essentials],
-//       campSiteArea: campSiteArea,
-//       amenities: amenities,
-//       essentials: essentials,
-//       activities: activities,
-//       terrain: site.terrain
-//     })
-//   })
-//   .catch(function(err) {
-//     console.log(err);
-//   })
-// }
 

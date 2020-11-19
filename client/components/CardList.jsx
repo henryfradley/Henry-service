@@ -1,11 +1,10 @@
 import React from 'react';
 import Card from './Card.jsx';
-import ReactModal from 'react-modal';
 
 let CardList = function(props) {
   let cards = props.cards;
   const cardList = cards.map((card) =>
-    <Card id ={cards.indexOf(card)} card={card} showModal={props.showModal} handleOpenModal={props.handleOpenModal} handleCloseModal={props.handleCloseModal} currentModal={props.currentModal} />
+    <Card key={cards.indexOf(card)} id ={cards.indexOf(card)} card={card} showModal={props.showModal} handleOpenModal={props.handleOpenModal} handleCloseModal={props.handleCloseModal} currentModal={props.currentModal} />
   )
 
   return (
