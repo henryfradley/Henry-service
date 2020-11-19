@@ -12,7 +12,7 @@
     "watch": "webpack --watch",
     "seed": "node seeder.js",
     "test": "NODE_ENV=test jest --forceExit",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch --verbose false"
   },
   "dependencies": {
     "axios": "^0.21.0",

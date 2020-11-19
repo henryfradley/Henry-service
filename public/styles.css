@@ -27,8 +27,19 @@
 
 
 body {
-  font-family: 'Calibre Light'
+  font-family: 'Calibre Light';
+  width: 45%;
+  /* max-width: 500px; */
+}
 
+.locationMap {
+  vertical-align: middle;
+  position: relative;
+
+
+}
+.arrow {
+  color: #E0E0E0;
 }
 
 
@@ -36,7 +47,7 @@ body {
   font-size: 15px;
   font-family: 'Calibre Regular';
   text-decoration: underline;
-  text-decoration-color: light grey;
+  text-decoration-color:grey;
   display: flex;
   margin: 0px;
 }
@@ -60,41 +71,69 @@ body {
 div .recommend {
   display: flex;
   flex-wrap: nowrap;
-
-
 }
 .recommend {
   font-size: 16px;
   font-family: 'Calibre Regular';
+  position: relative;
+  padding-top: 10px;
+  vertical-align: middle;
 
 }
+/* .recommendText {
+  margin-top: 20px;
+
+} */
 
 .thumbsup{
-  font-family: 'Calibre Regular';
-  font-size: 16px;
+  font-family: 'Poppins';
+  font-size: 14px;
   color: #40D9AC;
   margin: 2px;
   vertical-align: center;
+  display: flex;
+  /* margin-top: 10px; */
+
 }
 .header {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  /* width: 45%; */
   border-bottom: 1px solid #E0E0E0;
 }
-
+.circles {
+  position: relative;
+}
 .circle {
-  height: 30px;
-  width: 30px;
-  background-color: #bbb;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   display: inline-block;
+  border: 2px solid white;
+  position: absolute;
+}
+.circle-1 {
+  right: 50px;
+}
+
+.circle-2 {
+  right: 20px;
+
+}
+.circle-3 {
+  right: -10px;
+
+}
+.circle-4 {
+  right: -40px;
+
 }
 
 div .bar {
   align-items: inline;
   justify-content: space-between;
   background-color: none;
+  position: relative;
 }
 
 .bar {
@@ -150,13 +189,22 @@ div.topButtons {
 
 
 }
+
+.profileCircle {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 1px solid black;
+  content: inline-block;
+}
 .profilePhoto {
   padding-right: 1px;
   padding-top: 1px;
-  height: 70px;
-  width: 70px;
-  background-color: #bbb;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
+  /* background-color: #bbb; */
+
   display: inline-block;
   margin-right: 5%;
 
@@ -168,15 +216,21 @@ div.topButtons {
 }
 
 .hostedBy {
-  display: flex;
   width: 15%;
+  font-family: 'Calibre Regular';
+  font-size: 14px;
 
+}
+.host {
+  font-family: 'Calibre Light';
+  font-size: 18px;
+  display: flex;
 }
 
 .listing {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  /* width: 45%; */
   align-content: flex-end;
   font-family: 'Calibre Light';
   font-size: 18px;
@@ -232,11 +286,7 @@ div .covid {
   margin-right: 8px;
 }
 
-div.cards {
-  width: 45%;
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 h1.cardHead {
   font-family: 'Calibre Regular';
@@ -253,6 +303,11 @@ h1.cardHead {
 
 }
 
+div.cards {
+  /* width: 45%; */
+  display: flex;
+  flex-wrap: wrap;
+}
 
 
 
@@ -266,8 +321,10 @@ div.card {
   font-size: 18px;
   box-shadow: 0 0 2px #D3D3D3;
   position: relative;
-  width: 50%;
+  width: 500px;
+
 }
+
 
 .x {
   outline: none;
@@ -280,7 +337,7 @@ div.card {
 
 .modals {
   display: flex;
-  width: 45%;
+  /* width: 45%; */
   flex-wrap: wrap;
 }
 .modal::-webkit-scrollbar {
@@ -362,7 +419,7 @@ button .modal {
   padding-bottom: 20px;
   margin-bottom: 20px;
   display: flex;
-  width: 45%;
+  /* width: 45%; */
 }
 
 .column {
@@ -416,7 +473,7 @@ button .modal {
 }
 
 .terrain {
-  width: 45%;
+  /* width: 45%; */
   border-top: 1px solid #D3D3D3;
   margin-top: 30px;
 }

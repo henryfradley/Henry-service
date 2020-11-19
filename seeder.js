@@ -2,7 +2,7 @@ const faker = require('faker');
 
 const database = require('./server/database/db.js');
 
-let createTable = 'CREATE TABLE IF NOT EXISTS campsites(propertyId INT NOT NULL AUTO_INCREMENT, hostedBy VARCHAR(100), state VARCHAR(100), city VARCHAR(100), nearby VARCHAR(100),fullDescription VARCHAR(2000), tent VARCHAR(50), sites VARCHAR(50), guests VARCHAR(50), parking VARCHAR(50), ada VARCHAR(50), toilet VARCHAR(50), pets VARCHAR(50), campfire VARCHAR(50), water VARCHAR(50), kitchen VARCHAR(50), wifi VARCHAR(50), bins VARCHAR(50), showers VARCHAR(50), picnicTable VARCHAR(50), laundry VARCHAR(50), biking BOOLEAN, fishing BOOLEAN, hiking BOOLEAN, birdWatching BOOLEAN, swimming BOOLEAN, horsed BOOLEAN, surfing BOOLEAN, terrain VARCHAR(200), terrainDetails VARCHAR(300), profileImage VARCHAR(300), PRIMARY KEY (propertyId));';
+let createTable = 'CREATE TABLE IF NOT EXISTS campsites(propertyId INT NOT NULL AUTO_INCREMENT, hostedBy VARCHAR(100), state VARCHAR(100), city VARCHAR(100), nearby VARCHAR(100),fullDescription VARCHAR(2000), tent VARCHAR(50), sites VARCHAR(50), guests VARCHAR(50), parking VARCHAR(50), ada VARCHAR(50), toilet VARCHAR(50), pets VARCHAR(50), campfire VARCHAR(50), water VARCHAR(50), kitchen VARCHAR(50), wifi VARCHAR(50), bins VARCHAR(50), showers VARCHAR(50), picnicTable VARCHAR(50), laundry VARCHAR(50), biking BOOLEAN, fishing BOOLEAN, hiking BOOLEAN, birdWatching BOOLEAN, swimming BOOLEAN, horsed BOOLEAN, surfing BOOLEAN, terrain VARCHAR(200), terrainDetails VARCHAR(300), checkIn VARCHAR(10), checkOut VARCHAR(10), cancellation VARCHAR(100), nights INT, bookings INT, profileImage VARCHAR(200), image1 VARCHAR(250), image2 VARCHAR(250), image3 VARCHAR(250), image4 VARCHAR(250), PRIMARY KEY (propertyId));';
 
 database.query(createTable);
 
@@ -55,10 +55,38 @@ for (var i = 0; i < 100; i++) {
   let terrainTypes = ['Farm', 'Beach', 'Forest', 'Moutain', 'Coastal', 'Desert', 'Lake', 'Waterfall', 'Ranch'];
   let terrain = terrainTypes[faker.random.number({max: 9})];
   let terrainDetails = faker.lorem.sentence();
-  let profileImage = faker.image.nature();
-  let userProfiles = [faker.image.people(), faker.image.people(), faker.image.people(), faker.image.people()];
+  let checkInOptions = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm'];
+  let checkIn = checkInOptions[faker.random.number({max: 6})];
+  let checkOut = checkInOptions[faker.random.number({max: 6})];
+  let cancellationOptions = ['Moderate', 'Strict', 'Flexible'];
+  let cancellation = cancellationOptions[faker.random.number({max: 2})];
+  let nights = faker.random.number({min: 1, max: 5});
+  let bookings = faker.random.number({min: 1, max: 12});
+  let profileImages = ['https://fec-fake-profile.s3-us-west-1.amazonaws.com/berti-benbanaste-y1IbDH8WABk-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/christian-bisbo-johnsen-TnzAK9Hhe8E-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/cristina-anne-costello-sjpWEwmhkdw-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/fernando-saltos-vuRq9B-T-Ng-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/martin-brechtl-fEdp6zsl9P0-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/martin-dawson--vKCbD17qAg-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/muradi-vI267iBm2NQ-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/pieter-van-de-sande-xdX0nOHsrGc-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/valeriy-ryasnyanskiy-j_YcCcWl_Is-unsplash.jpg'];
+  let profileImage = profileImages[faker.random.number({max: 8})];
+  let userImages = ['https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/seth-doyle-QaZ-b11A6Zo-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/seth-doyle-IMYvZjlX3jE-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/noah-buscher-11lDEHFy_hA-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/milada-vigerova-kT0tsYZ2YE0-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/mika-W0i1N6FdCWA-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/midas-hofstra-tidSLv-UaNs-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/kenny-krosky-19iwynR1vaQ-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/jorge-saavedra-jbxL_EXEZB8-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/jessica-felicio-_cvwXhGqG-o-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/janko-ferlic-qzDF5PNEWKc-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/janko-ferlic-qzDF5PNEWKc-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/jorge-saavedra-jbxL_EXEZB8-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/kenny-krosky-19iwynR1vaQ-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/matthew-hamilton-tNCH0sKSZbA-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/midas-hofstra-tidSLv-UaNs-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/mika-W0i1N6FdCWA-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/milada-vigerova-kT0tsYZ2YE0-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/noah-buscher-11lDEHFy_hA-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/seth-doyle-IMYvZjlX3jE-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/seth-doyle-QaZ-b11A6Zo-unsplash.jpg', 'https://fec-fake-profile.s3-us-west-1.amazonaws.com/faces/seth-doyle-uJ8LNVCBjFQ-unsplash.jpg'];
+  let length = userImages.length - 1;
+  let index1 = faker.random.number({max: length});
+  let image1 = userImages[index1];
+  userImages.splice(index1, 1);
+  length = userImages.length - 1;
+  let index2 = faker.random.number({max: length});
+  let image2 = userImages[index2];
+  userImages.splice(index2, 1);
+  length = userImages.length - 1;
+  let index3 = faker.random.number({max: length});
+  let image3 = userImages[index3];
+  userImages.splice(index3, 1);
+  length = userImages.length - 1;
+  let index4 = faker.random.number({max: length});
+  let image4 = userImages[index4];
 
-  let queryStr = `INSERT INTO campsites VALUES (propertyId, "${hostedBy}", "${state}", "${city}", "${nearby}", "${fullDescription}", "${tent}", "${sites}", "${guests}", "${parking}", "${ada}", "${toilet}", "${pets}", "${campfire}", "${water}", "${kitchen}", "${wifi}", "${bins}", "${showers}", "${picnicTable}", "${laundry}", ${biking}, ${fishing}, ${hiking}, ${birdWatching}, ${swimming}, ${horses}, ${surfing}, "${terrain}", "${terrainDetails}", '${profileImage}');`;
+
+
+
+
+
+  let queryStr = `INSERT INTO campsites VALUES (propertyId, "${hostedBy}", "${state}", "${city}", "${nearby}", "${fullDescription}", "${tent}", "${sites}", "${guests}", "${parking}", "${ada}", "${toilet}", "${pets}", "${campfire}", "${water}", "${kitchen}", "${wifi}", "${bins}", "${showers}", "${picnicTable}", "${laundry}", ${biking}, ${fishing}, ${hiking}, ${birdWatching}, ${swimming}, ${horses}, ${surfing}, "${terrain}", "${terrainDetails}", "${checkIn}", "${checkOut}", "${cancellation}", "${nights}", "${bookings}", "${profileImage}", "${image1}", "${image2}", "${image3}", "${image4}");`;
 
   database.query(queryStr);
 }

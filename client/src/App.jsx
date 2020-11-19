@@ -50,8 +50,9 @@ class App extends React.Component {
       activities: {},
       terrain: '',
       showModal: false,
-      // modalList: [<CampSiteAreaModal />, <AmenitiesModal />, <EssentialsModal />, <Login />],
-      currentModal: ''
+      details: {},
+      currentModal: '',
+      userPhotos: []
     };
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -61,7 +62,6 @@ class App extends React.Component {
 
   // //need to make so it knows which div info to pop up
   handleOpenModal(event) {
-    console.log('hello?');
     let cardId = event.target.getAttribute('id');
     let modalList = [<CampSiteAreaModal info={this.state.csInfo} />, <AmenitiesModal info={this.state.amenitieInfo}/>, <EssentialsModal info={this.state.essentialInfo}/>, <Login />]
     let popup = modalList[cardId];
@@ -142,6 +142,13 @@ class App extends React.Component {
         horses: site.horses,
         surfing: site.surfing
       };
+      let details = {
+        checkIn: site.checkIn,
+        checkOut: site.checkOut,
+        cancellation: site.cancellation,
+        nights: site.nights,
+        bookings: site.bookings
+      }
 
       this.setState({
         hostedBy: site.hostedBy,
@@ -158,7 +165,10 @@ class App extends React.Component {
         essentialInfo: essentialInfo,
         activities: activities,
         terrain: site.terrain,
-        terrainDetails: site.terrainDetails
+        terrainDetails: site.terrainDetails,
+        details: details,
+        profileImage: site.profileImage,
+        userPhotos: [site.image1, site.image2, site.image3, site.image4]
       })
     })
     .catch(function(err) {
@@ -172,10 +182,10 @@ class App extends React.Component {
 
     return (
       <div>
-        <Description handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} title={this.state.hostedBy} nearby={this.state.nearby} state={this.state.state}/>
+        <Description handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} title={this.state.hostedBy} nearby={this.state.nearby} state={this.state.state} photos={this.state.userPhotos}/>
         <Listing title={this.state.hostedBy} description={this.state.fullDescription} photo={this.state.profileImage}/>
         <CardList showModal={this.state.showModal} handleOpenModal={this.handleOpenModal} handleCloseModal={this.handleCloseModal} cards={this.state.cards} currentModal={this.state.currentModal} />
-        <Details title={this.state.hostedBy} />
+        <Details title={this.state.hostedBy} details={this.state.details} />
         <Activities activities={this.state.activities} />
         <Terrain title={this.state.hostedBy} state={this.state.state} terrain ={this.state.terrain} terrainDetails={this.state.terrainDetails}/>
       </div>

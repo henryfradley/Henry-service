@@ -1,15 +1,13 @@
 import React from 'react';
 import { CgCheck } from "react-icons/cg";
-import ReadMoreReact from 'read-more-react'
+import ReadMore from 'read-more-react'
 let Listing = function(props) {
-  console.log(props.photo)
-
     return (
       <div className="listing">
         <div className="topListing">
         <div className="listedBy">
-          <span className="profilePhoto"></span>
-          <div className="hostedBy">Hosted by {props.title}
+         <img className="profilePhoto" src={props.photo}></img>
+          <div className="hostedBy">Hosted by <span className="host">{props.title}</span>
           </div>
         </div>
 
@@ -21,7 +19,7 @@ let Listing = function(props) {
         <div>
           <p className="description">The home of {props.title}.</p>
           <p className="description">
-            {props.description ? <ReadMoreReact text={props.description}
+            {props.description ? <ReadMore text={props.description}
             min={50}
             ideal={200}
             max={1000}
