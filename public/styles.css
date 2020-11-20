@@ -29,7 +29,12 @@
 body {
   font-family: 'Calibre Light';
   width: 45%;
+  color:#333333;
   /* max-width: 500px; */
+}
+
+.topLocation {
+  display: flex;
 }
 
 
@@ -39,15 +44,12 @@ body {
   text-decoration: underline;
   text-decoration-color: #E0E0E0;
   transition-duration: 0.6s;
+  cursor: pointer;
 }
-.locationState {
-  text-decoration: none;
-}
+
 
 .locationMap:hover {
   text-decoration-color: #808080
-
-
 }
 .arrow {
   color: #E0E0E0;
@@ -169,6 +171,10 @@ div.topButtons {
   display: flex;
   width: 40%;
 }
+.camera {
+  margin-right: 6px;
+  margin-top: 2px;
+}
 
 
 .upload {
@@ -186,6 +192,7 @@ div.topButtons {
   font-family: 'Calibre regular';
   font-size: 14px;
   transition-duration: 0.6s;
+  cursor: pointer;
 }
 
 .upload:hover {
@@ -206,6 +213,7 @@ div.topButtons {
   display: flex;
   font-family: 'Calibre regular';
   transition-duration: 0.6s;
+  cursor: pointer;
 
 }
 .save:hover {
@@ -221,6 +229,7 @@ div.topButtons {
   box-shadow: 0 0 2px #D3D3D3;
   background: none;
   transition-duration: 0.6s;
+  cursor: pointer;
 }
 .up:hover {
   box-shadow: 0 0 2px #808080
@@ -255,6 +264,7 @@ div.topButtons {
 .listedBy {
   margin-top: 2%;
   display: flex;
+  position: relative;
 
 }
 
@@ -262,16 +272,38 @@ div.topButtons {
   width: 20%;
   font-family: 'Calibre Regular';
   font-size: 14px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hostedBy:hover {
+  text-decoration-color: #808080
+}
+.star {
+  position: absolute;
+  left: 0px;
+  background-color: white;
+  border-radius: 25px;
+  height: 23px;
+  width: 22px;
+
 }
 .by {
   display: flex;
   width: 120px;
+  text-decoration: none;
+
 
 }
 .host {
   font-family: 'Calibre Light';
   font-size: 18px;
   width: 120px;
+  text-decoration: underline;
+  text-decoration-color: #E0E0E0;
+}
+.host:hover {
+  text-decoration-color: #808080
 }
 
 .listing {
@@ -337,7 +369,8 @@ div .covid {
 
 h1.cardHead {
   font-family: 'Calibre Regular';
-  font-size: 24px;
+  font-size: 20px;
+  color: #333333
 }
 
 .detailBox {
@@ -346,14 +379,17 @@ h1.cardHead {
   margin: 4% auto;
   padding: 4% 4%;
   font-family: 'Calibre Regular';
-  font-size: 16px;
-
+  font-size: 18px;
 }
+
+
 
 div.cards {
   /* width: 45%; */
   display: flex;
   flex-wrap: wrap;
+  width: 80%;
+  color: #333333;
 }
 
 
@@ -361,23 +397,25 @@ div.cards {
 div.card {
   /* border: .5px solid #E0E0E0; */
   padding: 3%;
-  flex: 1;
   margin: 2%;
   justify-content: center;
   font-family: 'Calibre Light';
   font-size: 18px;
   box-shadow: 0 0 2px #D3D3D3;
   position: relative;
-  width: 500px;
-
+  width: 35%;
+  height: 350px;
 }
+
+
 
 
 .x {
   outline: none;
   padding: 0;
   border: none;
-  background: none
+  background: none;
+  cursor: pointer
 }
 
 
@@ -414,11 +452,12 @@ div.card {
 }
 
 
+
 .modal {
   position: fixed;
   top: 2%;
-  left: 35%;
-  right: 35%;
+  left: 37%;
+  right: 37%;
   bottom: 5%;
   /* height: 80%; */
   background: #fff;
@@ -456,11 +495,21 @@ button .modal {
   font-size: 16px;
   position: absolute;
   bottom: 5px;
+  cursor: pointer;
 
 }
 
 .sendAMessage {
   color: #40D9AC;
+  text-decoration: underline;
+  text-decoration-color: #9fecd5;
+  cursor: pointer;
+
+
+}
+
+.sendAMessage:hover {
+  text-decoration-color: #40D9AC;
 }
 
 .details {
@@ -552,6 +601,7 @@ div.loginPrompt {
   font-family: 'Calibre Regular';
   font-size: 26px;
   text-align: center;
+  margin-bottom: 15px;
 }
 .outside {
   color: #808080;
@@ -562,13 +612,19 @@ div.loginPrompt {
   background-color: black;
   height: 50px;
   border-radius: 4px;
-  transition: top ease 1s;
+  transition: top ease-out .3s;
+  /* transition: all .4s ease; */
   position: relative;
+  cursor: pointer;
+
 }
 .apple:hover {
   top: -3px;
-  box-shadow: 0 4px 2px -2px gray
+  box-shadow: 0 3px 2px -1px gray;
+  transition: bottom ease-in .3s;
+
 }
+
 .appleText {
   margin-top: 10px;
   color:white;
@@ -585,12 +641,14 @@ div.loginPrompt {
   background-color: #3b5998;
   height: 50px;
   border-radius: 4px;
-  transition: top ease 1s;
+  transition: top ease-out .3s;
   position: relative;
+  cursor: pointer;
 }
 .facebook:hover {
   top: -3px;
-  box-shadow: 0 4px 2px -2px gray
+  box-shadow: 0 4px 2px -2px gray;
+  transition: bottom ease-in .3s;
 }
 .facebookText {
   margin-top: 10px;
@@ -598,7 +656,7 @@ div.loginPrompt {
   font-family: 'Calibre Regular';
   font-size: 16px;
   vertical-align: middle;
-  padding-top: 12px;
+  padding-top: 12.5px;
   padding-bottom: 12px;
 }
 .email {
@@ -606,12 +664,24 @@ div.loginPrompt {
   background-color: #40D9AC;
   height: 50px;
   border-radius: 4px;
-  transition: top ease 1s;
+  transition: top ease-out .3s;
   position: relative;
+  cursor: pointer;
+}
+.logo {
+  position: absolute;
+  top: 12px;
+  left: 80px;
+}
+.facebookLogo {
+  position: absolute;
+  top: 13px;
+  left: 65px;
 }
 .email:hover {
   top: -3px;
   box-shadow: 0 4px 2px -2px #D3D3D3;
+  transition: bottom ease-in .3s;
 }
 .emailText {
   margin-top: 10px;
@@ -624,6 +694,7 @@ div.loginPrompt {
 }
 .signupText {
   font-family: 'Calibre Regular';
+  cursor: pointer;
 }
 .haveAcount {
   font-family: 'Calibre Light';
@@ -639,13 +710,42 @@ div.loginPrompt {
   margin-left: auto;
   margin-right: auto;
   color: #808080;
+  align-items: center;
+  position: relative;
+
 }
+
 
 .orSpan {
-  background: white;
-  width: 60px;
+  background-color: white;
   height: 20px;
+  width: 10%;
+  /* text-align: center;
+  margin-left: auto;
+  margin-right: auto; */
+  position: absolute;
+  left: 45%;
+  right: 45%;
+  bottom: -18px;
 }
 
+.inputPopup {
+  width: 96%;
+  align-items: center;
+  height: 50px;
+  border: 1px solid black;
+  font-family: 'Calibre Regular';
+  font-size: 16px;
+  color: black;
+
+}
+::placeholder {
+  color: black;
+  padding-left: 20px;
+}
+
+.input-1 {
+  margin-top: 15px;
+}
 
 

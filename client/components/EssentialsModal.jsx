@@ -18,6 +18,8 @@ let EssentialsModal = function(props) {
       <FaDog size="30px"/>
       <br/>
       {props.info.pets}
+      <br/>
+      {props.info.petInfo}
     </div>
     <div className="detailBox">
       <GiCampfire size="40px"/>
