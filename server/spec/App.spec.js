@@ -17,6 +17,7 @@ const mockCards = [
   ['card1', 'card2', 'card3']
 ]
 const mockData = ['title', 'nearby', 'state']
+const mockPhotos = ['image1', 'image2', 'image3']
 
 describe('checkEndpoints', () => {
   it('Testing to see if Jest works', () => {
@@ -48,7 +49,7 @@ describe('CardList component', () => {
 
 describe('Description component', () => {
   test('renders', () => {
-    const wrapper = shallow( <Description title={mockData[0]} nearby={mockData[1]} state={mockData[2]} />);
+    const wrapper = shallow( <Description title={mockData[0]} nearby={mockData[1]} state={mockData[2]} photos={mockPhotos}/>);
 
     expect(wrapper.exists()).toBe(true)
   });
