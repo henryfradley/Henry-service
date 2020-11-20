@@ -12,7 +12,7 @@ let Description = function(props) {
 
   return (
     <div className="header">
-        <div className="locationMap">United States  <span className="arrow arrow-1"><MdKeyboardArrowRight size="18px"/></span>  <span className="locationState">{props.state} </span> <span className="arrow arrow-2"><MdKeyboardArrowRight size="18px"/></span>  {props.title}  <span className="arrow arrow-3"><MdKeyboardArrowRight size="18px"/></span> </div>
+        <div className="topLocation"><div className="locationMap">United States</div><span className="arrow arrow-1"><MdKeyboardArrowRight size="18px"/></span><span className="locationState"><div className="locationMap">{props.state}</div></span><span className="arrow arrow-2"><MdKeyboardArrowRight size="18px"/></span>  <div className="locationMap">{props.title}</div><span className="arrow arrow-3"><MdKeyboardArrowRight size="18px"/></span></div>
        <h1 className="title">{props.title}</h1>
        <h4 className="nearbyDiv"><span className="nearby">Nearby: </span>{props.nearby}</h4>
        <div className="bar">
@@ -26,10 +26,10 @@ let Description = function(props) {
           <div className="upvotes">+63</div>
        </div>
       <div className="topButtons">
-        <button onClick={props.handleOpenModal} id ={3}className="upload"><MdCameraAlt size="15px"/>  Upload</button>
+        <button onClick={props.handleOpenModal} id ={3}className="upload"><span className="camera"><MdCameraAlt size="15px"/></span>  Upload</button>
         <button onClick={props.handleOpenModal} id ={3}className="save">Save to list <MdKeyboardArrowDown size="15px"/></button>
         <button onClick={props.handleOpenModal} id ={3}className="up">
-         <CgArrowUpR size="15px" />
+         <CgArrowUpR color="gray" size="15px" />
         </button>
       </div>
 

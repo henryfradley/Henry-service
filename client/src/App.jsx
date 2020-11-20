@@ -56,14 +56,13 @@ class App extends React.Component {
     };
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
-
   }
 
 
   // //need to make so it knows which div info to pop up
   handleOpenModal(event) {
     let cardId = event.target.getAttribute('id');
-    let modalList = [<CampSiteAreaModal info={this.state.csInfo} />, <AmenitiesModal info={this.state.amenitieInfo}/>, <EssentialsModal info={this.state.essentialInfo}/>, <Login />]
+    let modalList = [<CampSiteAreaModal info={this.state.csInfo} />, <AmenitiesModal info={this.state.amenitieInfo}/>, <EssentialsModal info={this.state.essentialInfo}/>, <Login handlePopupClick={this.handlePopup} showPopup={this.showPopup}/>]
     let popup = modalList[cardId];
     this.setState({
       showModal: true,
@@ -77,6 +76,8 @@ class App extends React.Component {
       currentModal: ''
     });
   }
+
+
 
   componentDidMount() {
     axios({
@@ -96,13 +97,16 @@ class App extends React.Component {
       let essentialInfo = {
         toilet: site.toilet,
         pets: site.pets,
+        petInfo: site.petInfo,
         campfire: site.campfire
 
       };
       let amenitieInfo = {
         water: site.water,
         kitchen: site.kitchen,
+        kitchenInfo: site.kitchenInfo,
         wifi: site.wifi,
+        wifiInfo: site.wifiInfo,
         bins: site.bins,
         showers: site.showers,
         picnicTable: site.picnicTable,

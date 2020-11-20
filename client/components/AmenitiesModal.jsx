@@ -25,11 +25,15 @@ let AmenitiesModal = function(props) {
       <GiKnifeFork size="30px"/>
       <br/>
       {props.info.kitchen}
+      <br/>
+      {props.info.kitchenInfo}
     </div>
     <div className="detailBox">
       <BiWifi size="40px"/>
       <br/>
       {props.info.wifi}
+      <br/>
+      <div className="detailsInfo">{props.info.wifiInfo}</div>
     </div>
     <div className="detailBox">
       <GiTrashCan size="40px"/>

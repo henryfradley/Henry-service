@@ -1,11 +1,13 @@
 import React from 'react';
 import { CgCheck } from "react-icons/cg";
-import ReadMore from 'read-more-react'
+import { MdStars } from "react-icons/md";
+import ReadMore from 'read-more-react';
 let Listing = function(props) {
     return (
       <div className="listing">
         <div className="topListing">
         <div className="listedBy">
+        <span className="star"><MdStars color="#ffdd42" size="25px"/></span>
          <img className="profilePhoto" src={props.photo}></img>
           <div className="hostedBy">
             <div className="by">Hosted by </div>
