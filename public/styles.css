@@ -91,6 +91,7 @@ div .recommend {
   position: relative;
   padding-top: 10px;
   vertical-align: middle;
+  position: relative;
 
 }
 /* .recommendText {
@@ -105,8 +106,13 @@ div .recommend {
   margin: 2px;
   vertical-align: center;
   display: flex;
+  /* position: absolute; */
   /* margin-top: 10px; */
-
+}
+.recommendText {
+  /* position: absolute; */
+  left: 50px;
+  margin-right: 10px;
 }
 .header {
   display: flex;
@@ -299,6 +305,7 @@ div.topButtons {
   font-family: 'Calibre Light';
   font-size: 18px;
   width: 120px;
+  margin-right: 10px;
   text-decoration: underline;
   text-decoration-color: #E0E0E0;
 }
@@ -329,22 +336,48 @@ div.topButtons {
   padding: 5px;
 }
 div .covid {
-  padding: 5px;
+  padding: 2px 5px;
+
 
 }
 .here {
   color: #972985;
 }
 
+
 .description {
   font-family: 'Calibre Light';
   justify-content: right;
   /* width: 80%; */
   margin-left: 35%;
+}
 
+.description-1 {
+  margin-left: 35%;
+  height: 130px;
+  overflow: hidden;
+  margin-bottom: 0px;
+}
 
+.description-2 {
+  margin-left: 35%;
+  margin-bottom: 20px;
 
 }
+
+.read {
+  font-family: 'Calibre Regular';
+  margin-left: 85%;
+  margin-top: 0px;
+  color: black;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #E0E0E0;
+}
+.read:hover {
+  text-decoration-color: #808080
+}
+
 
 .cardInfo {
   display: flex;
@@ -374,7 +407,7 @@ h1.cardHead {
 }
 
 .detailBox {
-  border: .5px solid #E0E0E0;
+  box-shadow: 0 0 2px #D3D3D3;
   width: 80%;
   margin: 4% auto;
   padding: 4% 4%;
@@ -417,6 +450,8 @@ div.card {
   background: none;
   cursor: pointer
 }
+
+
 
 
 
@@ -484,6 +519,11 @@ button .modal {
   border: none;
   outline: none;
 
+}
+.modalHead {
+  font-family: 'Calibre Regular';
+  font-size: 24px;
+  margin-left: 7%;
 }
 
 .moreDetails {
@@ -560,7 +600,7 @@ button .modal {
   padding-top: 20%;
   width: 75px;
   height: 75px;
-  border: 1px solid #D3D3D3;
+  box-shadow: 0 0 2px #D3D3D3;
 }
 
 .terrainHead {
@@ -585,7 +625,7 @@ button .modal {
 .terrainTypes {
   margin-top: 30px;
   width: 25%;
-  border: 1px solid #D3D3D3;
+  box-shadow: 0 0 2px #D3D3D3;
   padding: 5% 5%;
 }
 div.loginPrompt {
@@ -748,4 +788,7 @@ div.loginPrompt {
   margin-top: 15px;
 }
 
+.smallDetails {
+  font-size: 14px;
+}
 

@@ -15,7 +15,7 @@ let AmenitiesModal = function(props) {
 
   return (
     <div>
-    <h1>Amenities</h1>
+    <h1 className="modalHead">Amenities</h1>
     <div className="detailBox">
       <GiWaterSplash size="30px"/>
       <br/>
@@ -26,15 +26,16 @@ let AmenitiesModal = function(props) {
       <br/>
       {props.info.kitchen}
       <br/>
-      {props.info.kitchenInfo}
+      <p className="smallDetails">{props.info.kitchenInfo}</p>
     </div>
     <div className="detailBox">
       <BiWifi size="40px"/>
       <br/>
       {props.info.wifi}
       <br/>
-      <div className="detailsInfo">{props.info.wifiInfo}</div>
-    </div>
+      <p className="smallDetails">{props.info.wifiInfo}</p>
+      </div>
+
     <div className="detailBox">
       <GiTrashCan size="40px"/>
       <br/>

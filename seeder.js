@@ -49,13 +49,13 @@ for (var i = 0; i < 100; i++) {
   let laundry = laundryOptions[faker.random.number({min: 0, max: 1})];
 
 
-  let biking = faker.random.boolean();
-  let fishing = faker.random.boolean();
-  let hiking = faker.random.boolean();
-  let birdWatching = faker.random.boolean();
-  let swimming = faker.random.boolean();
-  let horses = faker.random.boolean();
-  let surfing = faker.random.boolean();
+  let Biking = faker.random.boolean();
+  let Fishing = faker.random.boolean();
+  let Hiking = faker.random.boolean();
+  let BirdWatching = faker.random.boolean();
+  let Swimming = faker.random.boolean();
+  let Horses = faker.random.boolean();
+  let Surfing = faker.random.boolean();
   let terrainTypes = ['Farm', 'Beach', 'Forest', 'Moutain', 'Coastal', 'Desert', 'Lake', 'Waterfall', 'Ranch'];
   let terrain = terrainTypes[faker.random.number({max: 7})];
   let terrainDetails = faker.lorem.sentence();
@@ -90,7 +90,7 @@ for (var i = 0; i < 100; i++) {
 
 
 
-  let queryStr = `INSERT INTO campsites VALUES (propertyId, "${hostedBy}", "${state}", "${city}", "${nearby}", "${fullDescription}", "${tent}", "${sites}", "${guests}", "${parking}", "${ada}", "${toilet}", "${toiletInfo}", "${pets}", "${petInfo}", "${campfire}", "${water}", "${kitchen}", "${kitchenInfo}", "${wifi}", "${wifiInfo}", "${bins}", "${showers}", "${picnicTable}", "${laundry}", ${biking}, ${fishing}, ${hiking}, ${birdWatching}, ${swimming}, ${horses}, ${surfing}, "${terrain}", "${terrainDetails}", "${checkIn}", "${checkOut}", "${cancellation}", "${nights}", "${bookings}", "${profileImage}", "${image1}", "${image2}", "${image3}", "${image4}");`;
+  let queryStr = `INSERT INTO campsites VALUES (propertyId, "${hostedBy}", "${state}", "${city}", "${nearby}", "${fullDescription}", "${tent}", "${sites}", "${guests}", "${parking}", "${ada}", "${toilet}", "${toiletInfo}", "${pets}", "${petInfo}", "${campfire}", "${water}", "${kitchen}", "${kitchenInfo}", "${wifi}", "${wifiInfo}", "${bins}", "${showers}", "${picnicTable}", "${laundry}", ${Biking}, ${Fishing}, ${Hiking}, ${BirdWatching}, ${Swimming}, ${Horses}, ${Surfing}, "${terrain}", "${terrainDetails}", "${checkIn}", "${checkOut}", "${cancellation}", "${nights}", "${bookings}", "${profileImage}", "${image1}", "${image2}", "${image3}", "${image4}");`;
 
   database.query(queryStr);
 }

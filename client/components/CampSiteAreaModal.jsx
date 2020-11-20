@@ -10,7 +10,7 @@ let CampSiteAreaModal = function(props) {
 
   return (
     <div>
-    <h1>Campsite Area</h1>
+    <h1 className="modalHead">Campsite Area</h1>
     <div className="detailBox">
       <CgShapeTriangle size="50px" />
       <br/>

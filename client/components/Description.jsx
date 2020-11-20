@@ -17,7 +17,14 @@ let Description = function(props) {
        <h4 className="nearbyDiv"><span className="nearby">Nearby: </span>{props.nearby}</h4>
        <div className="bar">
          <div className="recommend">
-         <div className="thumbsup"><FaThumbsUp size="20px"/></div> <span className="thumbsup">95%</span> Recommend</div>
+            <div className="thumbsup"><FaThumbsUp size="20px"/></div> <span className="thumbsup">95%</span> Recommend
+
+            {/* <div className="recommend"><span className="thumbsup"><FaThumbsUp size="20px"/>95%</span> <span className="recommendText">Recommend</span></div> */}
+
+
+         </div>
+
+
          <div className="circles">
           <img className="circle circle-1" src={props.photos[0]}></img>
           <img className="circle circle-2" src={props.photos[1]}></img>
