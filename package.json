@@ -10,7 +10,9 @@
     "build": "webpack --config webpack.config.js",
     "start": "nodemon ./server/server.js",
     "watch": "webpack --watch",
-    "seed": "node seeder.js"
+    "seed": "node seeder.js",
+    "test": "NODE_ENV=test jest --forceExit",
+    "test:watch": "jest --watch --verbose false"
   },
   "dependencies": {
     "axios": "^0.21.0",
@@ -22,15 +24,24 @@
     "faker": "^5.1.0",
     "mysql": "^2.18.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-icons": "^3.11.0",
+    "react-modal": "^3.11.2",
+    "read-more-react": "^1.0.10"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.3.1",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
+    "jest": "^26.6.3",
     "nodemon": "^2.0.6",
+    "supertest": "^6.0.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0"
   },
