@@ -7,7 +7,9 @@ let Listing = function(props) {
         <div className="topListing">
         <div className="listedBy">
          <img className="profilePhoto" src={props.photo}></img>
-          <div className="hostedBy">Hosted by <span className="host">{props.title}</span>
+          <div className="hostedBy">
+            <div className="by">Hosted by </div>
+            <div className="host">{props.title}</div>
           </div>
         </div>
 

@@ -21,9 +21,6 @@ let Activities = (props) => {
     swimming: <GrSwim size="50px"/>,
     horses: <GiHorseHead size="50px"/>,
     surfing: <GiWaveSurfer size="50px"/>,
-
-
-
   }
 
 

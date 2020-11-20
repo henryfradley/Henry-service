@@ -32,9 +32,20 @@ body {
   /* max-width: 500px; */
 }
 
+
 .locationMap {
   vertical-align: middle;
   position: relative;
+  text-decoration: underline;
+  text-decoration-color: #E0E0E0;
+  transition-duration: 0.6s;
+}
+.locationState {
+  text-decoration: none;
+}
+
+.locationMap:hover {
+  text-decoration-color: #808080
 
 
 }
@@ -126,7 +137,19 @@ div .recommend {
 }
 .circle-4 {
   right: -40px;
-
+}
+.upvotes {
+  left: 25px;
+  top: 12px;
+  width: 40px;
+  height: 18px;
+  border-radius: 8px;
+  position: absolute;
+  text-align: center;
+  font-family: 'Calibre Regular';
+  font-size: 14px;
+  box-shadow: 0 0 2px #D3D3D3;
+  background-color: white;
 }
 
 div .bar {
@@ -155,11 +178,19 @@ div.topButtons {
   height: 35px;
   font-weight: bold;
   border-radius: 0px;
-  border: .5px solid #E0E0E0;
+  /* border: .5px solid #E0E0E0; */
+  border: none;
+  box-shadow: 0 0 2px #D3D3D3;
   background: none;
   display: flex;
   font-family: 'Calibre regular';
   font-size: 14px;
+  transition-duration: 0.6s;
+}
+
+.upload:hover {
+  box-shadow: 0 0 2px #808080
+
 }
 .save {
   margin-right: 10px;
@@ -168,11 +199,17 @@ div.topButtons {
   width: 92px;
   height: 35px;
   border-radius: 0px;
-  border: .5px solid #E0E0E0;
+  border: none;
+  box-shadow: 0 0 2px #D3D3D3;
   background: none;
   color: #E68585;
   display: flex;
   font-family: 'Calibre regular';
+  transition-duration: 0.6s;
+
+}
+.save:hover {
+  box-shadow: 0 0 2px #808080
 
 }
 .up {
@@ -180,8 +217,14 @@ div.topButtons {
   border-radius: 0px;
   height: 35px;
   width: 35px;
-  border: .5px solid #E0E0E0;
+  border: none;
+  box-shadow: 0 0 2px #D3D3D3;
   background: none;
+  transition-duration: 0.6s;
+}
+.up:hover {
+  box-shadow: 0 0 2px #808080
+
 }
 
 .topListing {
@@ -216,15 +259,19 @@ div.topButtons {
 }
 
 .hostedBy {
-  width: 15%;
+  width: 20%;
   font-family: 'Calibre Regular';
   font-size: 14px;
+}
+.by {
+  display: flex;
+  width: 120px;
 
 }
 .host {
   font-family: 'Calibre Light';
   font-size: 18px;
-  display: flex;
+  width: 120px;
 }
 
 .listing {
@@ -347,6 +394,7 @@ div.card {
   opacity: 0;
   transform: translateY(-100px);
   transition: all 500ms ease-in-out;
+
 }
 
 .ReactModal__Overlay--after-open {
@@ -365,6 +413,7 @@ div.card {
 
 }
 
+
 .modal {
   position: fixed;
   top: 2%;
@@ -380,6 +429,9 @@ div.card {
   box-shadow: 0 0 10px #D3D3D3;
   max-height: 100vh;
   overflow-y: auto;
+}
+.modalBackground {
+  background-color: purple;
 }
 
 
@@ -510,6 +562,12 @@ div.loginPrompt {
   background-color: black;
   height: 50px;
   border-radius: 4px;
+  transition: top ease 1s;
+  position: relative;
+}
+.apple:hover {
+  top: -3px;
+  box-shadow: 0 4px 2px -2px gray
 }
 .appleText {
   margin-top: 10px;
@@ -521,11 +579,18 @@ div.loginPrompt {
   padding-bottom: 12px;
 }
 
+
 .facebook {
   margin-top: 15px;
   background-color: #3b5998;
   height: 50px;
   border-radius: 4px;
+  transition: top ease 1s;
+  position: relative;
+}
+.facebook:hover {
+  top: -3px;
+  box-shadow: 0 4px 2px -2px gray
 }
 .facebookText {
   margin-top: 10px;
@@ -541,6 +606,12 @@ div.loginPrompt {
   background-color: #40D9AC;
   height: 50px;
   border-radius: 4px;
+  transition: top ease 1s;
+  position: relative;
+}
+.email:hover {
+  top: -3px;
+  box-shadow: 0 4px 2px -2px #D3D3D3;
 }
 .emailText {
   margin-top: 10px;

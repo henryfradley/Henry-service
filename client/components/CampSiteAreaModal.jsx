@@ -2,14 +2,11 @@ import React from 'react';
 import { CgShapeTriangle } from "react-icons/cg";
 import { GoLocation} from "react-icons/go";
 import { GoPerson } from "react-icons/go";
-import { IconName } from "react-icons/bs"
 import { RiParkingLine } from "react-icons/ri";
 import { BiHandicap } from "react-icons/bi";
 
 
 let CampSiteAreaModal = function(props) {
-  console.log(props);
-
 
   return (
     <div>

@@ -8,6 +8,7 @@ import Enzyme, { shallow, mount, render } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import CardList from '../../client/components/CardList.jsx'
 import Description from '../../client/components/Description.jsx'
+import Listing from '../../client/components/Listing.jsx'
 
 Enzyme.configure({ adapter: new Adapter() });
 jest.mock('axios');
@@ -35,6 +36,7 @@ describe('checkEndpoints', () => {
   });
 });
 
+
 describe('CardList component', () => {
   test('renders', () => {
     const wrapper = shallow(<CardList cards={mockCards}/>);
@@ -51,6 +53,9 @@ describe('Description component', () => {
     expect(wrapper.exists()).toBe(true)
   });
 });
+
+
+
 
 
 
