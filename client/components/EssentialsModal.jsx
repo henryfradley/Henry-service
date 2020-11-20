@@ -8,7 +8,7 @@ let EssentialsModal = function(props) {
 
   return (
     <div>
-    <h1>Essentials</h1>
+    <h1 className="modalHead">Essentials</h1>
     <div className="detailBox">
       <FaToiletPaper size="30px"/>
       <br/>
@@ -19,7 +19,7 @@ let EssentialsModal = function(props) {
       <br/>
       {props.info.pets}
       <br/>
-      {props.info.petInfo}
+      <p className="smallDetails">{props.info.petInfo}</p>
     </div>
     <div className="detailBox">
       <GiCampfire size="40px"/>

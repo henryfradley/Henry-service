@@ -82,7 +82,7 @@ class App extends React.Component {
   componentDidMount() {
     axios({
       method: 'GET',
-      url: 'api/campsites/1'
+      url: 'api/campsites/2'
     })
     .then(response => {
 

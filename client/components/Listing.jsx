@@ -1,8 +1,12 @@
 import React from 'react';
 import { CgCheck } from "react-icons/cg";
 import { MdStars } from "react-icons/md";
-import ReadMore from 'read-more-react';
 let Listing = function(props) {
+  const [showParagraph, setShowParagraph] = React.useState(false)
+  const readMoreClick = () => setShowParagraph(true)
+
+
+
     return (
       <div className="listing">
         <div className="topListing">
@@ -22,14 +26,13 @@ let Listing = function(props) {
 
         <div>
           <p className="description">The home of {props.title}.</p>
-          <p className="description">
-            {props.description ? <ReadMore text={props.description}
-            min={50}
-            ideal={200}
-            max={1000}
-            readMoreText="Read more..."/> : null
-            }
+          {showParagraph ? <p className="description-2">
+            {props.description}
+          </p> : <div><p className="description-1">
+            {props.description}
           </p>
+            <p onClick={readMoreClick} className="read">Read more...</p></div>
+            }
         </div>
       </div>
     )
@@ -47,4 +50,3 @@ let Listing = function(props) {
 
 export default Listing;
 
-// {props.description}
