@@ -199,6 +199,6 @@ class App extends React.Component {
 
 }
 
-ReactDOM.render(<App />, document.getElementById('service-2'));
+ReactDOM.render(<App />, document.getElementById('service2'));
 
 
